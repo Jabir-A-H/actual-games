@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Classic Games List</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+      defer
+    ></script>
+    <script src="supabase-config.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Classic Games List</h1>
+      <p class="intro-text">
+        Welcome to the Classic Games List! This curated collection celebrates
+        timeless mobile and PC games from past eras that defined gaming
+        nostalgia. Here, you can explore beloved titles across genres and
+        platforms, and add your own favorites to keep the list growing. No
+        distractions, no ads—just pure classic gaming memories in one place.
+      </p>
+      <p>Add your favorite classic games and explore the list!</p>
+    </header>
+
+    <main>
+      <section id="game-list-section">
+        <h2>Game List</h2>
+        <div id="table-tools">
+          <label for="filter-input">Filter:</label>
+          <input
+            id="filter-input"
+            type="text"
+            placeholder="Search name, platform, category, or features"
+          />
+          <button type="button" id="clear-filter-btn">Clear</button>
+        </div>
+        <table id="game-table">
+          <thead>
+            <tr>
+              <th class="sortable" data-sort-key="id" scope="col">#</th>
+              <th class="sortable" data-sort-key="name" scope="col">Name</th>
+              <th class="sortable" data-sort-key="platform" scope="col">
+                Platform
+              </th>
+              <th class="sortable" data-sort-key="category" scope="col">
+                Category
+              </th>
+              <th class="sortable" data-sort-key="notable_features" scope="col">
+                Notable Features
+              </th>
+            </tr>
+          </thead>
+          <tbody id="game-table-body">
+            <!-- Rows will be populated by script.js -->
+          </tbody>
+        </table>
+      </section>
+
+      <section id="add-game-section">
+        <h2>
+          <button
+            id="toggle-add-game"
+            class="collapsible-trigger"
+            aria-expanded="false"
+            aria-controls="add-game-collapse"
+            type="button"
+          >
+            Add a New Game
+            <span class="chevron" aria-hidden="true"></span>
+          </button>
+        </h2>
+
+        <div id="add-game-collapse" class="collapsible-content" hidden>
+          <form id="add-game-form">
+            <label for="name">Game Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              maxlength="100"
+              placeholder="e.g., Tetris"
+              required
+            />
+            <br /><br />
+
+            <label for="platform">Platform:</label>
+            <input
+              type="text"
+              id="platform"
+              name="platform"
+              maxlength="50"
+              placeholder="e.g., Game Boy"
+              required
+            />
+            <br /><br />
+
+            <label for="category">Category:</label>
+            <input
+              type="text"
+              id="category"
+              name="category"
+              maxlength="50"
+              placeholder="e.g., Puzzle"
+              required
+            />
+            <br /><br />
+
+            <label for="notable_features">Notable Features:</label>
+            <textarea
+              id="notable_features"
+              name="notable_features"
+              maxlength="255"
+              rows="3"
+              placeholder="e.g., Falling blocks, endless mode"
+              required
+            ></textarea>
+            <br /><br />
+
+            <button type="submit">Add Game</button>
+          </form>
+          <p id="form-message" class="hidden"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Hosted with Supabase + Static Site</p>
+    </footer>
+  </body>
+</html>
