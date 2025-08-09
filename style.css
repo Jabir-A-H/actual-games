@@ -124,6 +124,12 @@ table {
   border-radius: var(--radius-sm);
 }
 
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 th,
 td {
   border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -286,4 +292,30 @@ th[aria-sort="descending"].sortable::after {
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  body { padding: 0 14px 28px; }
+  h1 { font-size: 1.9em; }
+  h2 { font-size: 1.2em; }
+
+  section { padding: 14px 12px 10px; }
+
+  #table-tools { flex-wrap: wrap; gap: 8px; }
+  #table-tools label { width: 100%; order: -1; margin-bottom: 2px; }
+  #table-tools input[type="text"] { min-width: 0; flex: 1 1 100%; }
+  #clear-filter-btn { width: 100%; }
+
+  th, td { padding: 10px 8px; }
+  .sortable { padding-right: 18px; }
+
+  form label { margin-top: 8px; }
+  input[type="text"], textarea { font-size: 16px; } /* prevent iOS zoom */
+  button { width: 100%; padding: 12px 18px; }
+}
+
+@media (max-width: 420px) {
+  h1 { font-size: 1.7em; }
+  #table-tools input[type="text"] { background-position: 8px center; padding-left: 34px; }
 }

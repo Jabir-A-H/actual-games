@@ -16,11 +16,12 @@
     <header>
       <h1>Actual Games</h1>
       <p class="intro-text">
-        Welcome to the Actual Games! This curated collection celebrates
-        timeless mobile and PC games from past eras which are from the pre-microtransaction plague that defined gaming
-        nostalgia. Here, you can explore beloved titles across genres and
-        platforms, and add your own favorites to keep the list growing. No
-        distractions, no ads—just pure classic gaming memories in one place.
+        Welcome to the Actual Games! This curated collection celebrates timeless
+        mobile and PC games from past eras which are from the
+        pre-microtransaction plague that defined gaming nostalgia. Here, you can
+        explore beloved titles across genres and platforms, and add your own
+        favorites to keep the list growing. No distractions, no ads—just pure
+        classic gaming memories in one place.
       </p>
       <p>Add your favorite classic games and explore the list!</p>
     </header>
@@ -37,26 +38,32 @@
           />
           <button type="button" id="clear-filter-btn">Clear</button>
         </div>
-        <table id="game-table">
-          <thead>
-            <tr>
-              <th class="sortable" data-sort-key="id" scope="col">#</th>
-              <th class="sortable" data-sort-key="name" scope="col">Name</th>
-              <th class="sortable" data-sort-key="platform" scope="col">
-                Platform
-              </th>
-              <th class="sortable" data-sort-key="category" scope="col">
-                Category
-              </th>
-              <th class="sortable" data-sort-key="notable_features" scope="col">
-                Notable Features
-              </th>
-            </tr>
-          </thead>
-          <tbody id="game-table-body">
-            <!-- Rows will be populated by script.js -->
-          </tbody>
-        </table>
+        <div class="table-container">
+          <table id="game-table">
+            <thead>
+              <tr>
+                <th class="sortable" data-sort-key="id" scope="col">#</th>
+                <th class="sortable" data-sort-key="name" scope="col">Name</th>
+                <th class="sortable" data-sort-key="platform" scope="col">
+                  Platform
+                </th>
+                <th class="sortable" data-sort-key="category" scope="col">
+                  Category
+                </th>
+                <th
+                  class="sortable"
+                  data-sort-key="notable_features"
+                  scope="col"
+                >
+                  Notable Features
+                </th>
+              </tr>
+            </thead>
+            <tbody id="game-table-body">
+              <!-- Rows will be populated by script.js -->
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section id="add-game-section">
